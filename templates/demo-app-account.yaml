@@ -10,7 +10,7 @@ metadata:
 spec:
   destination:
     namespace: acc
-    server: {{ .Values.destination.server }}
+    server: {{ .Values.spec.destination.server }}
   project: acc
   source:
     path: demo-app-account
