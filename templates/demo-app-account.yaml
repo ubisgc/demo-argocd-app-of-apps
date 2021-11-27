@@ -13,7 +13,7 @@ spec:
     server: {{ .Values.spec.destination.server }}
   project: acc
   source:
-    path: demo-app-account
+    path: ./
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
   syncPolicy:
