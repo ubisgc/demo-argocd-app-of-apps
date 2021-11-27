@@ -1,1 +1,1 @@
-# demo-argocd-app-of-apps
+# demo-argocd-apps
