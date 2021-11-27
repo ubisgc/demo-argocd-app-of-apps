@@ -1,0 +1,6 @@
+spec:
+  destination:
+    server: https://kubernetes.default.svc:6443
+  source:
+    repoURL: https://github.com/ubisgc/demo-app-account
+    targetRevision: main
