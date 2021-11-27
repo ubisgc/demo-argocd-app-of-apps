@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: acc-demo-app-account
+  #For app of apps to work, the metadata 'namespace: openshift-gitops' is required
+  #Source:  https://github.com/argoproj/argo-cd/issues/3181#issuecomment-626901858
+  namespace: openshift-gitops
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: acc
+    server: {{ .Values.destination.server }}
+  project: acc
+  source:
+    path: demo-app-account
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision }}
+  syncPolicy:
+    automated:
+      prune: true
+      allowEmpty: true
+    syncOptions:
+      - CreateNamespace=false
+      - PruneLast=true
