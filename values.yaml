@@ -1,6 +1,7 @@
 spec:
   destination:
     server: https://kubernetes.default.svc
+    name: argocdtest
   source:
     repoURL: https://github.com/ubisgc/demo-helm-account
     targetRevision: main
